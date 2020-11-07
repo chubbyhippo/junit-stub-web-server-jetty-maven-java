@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.eclipse.jetty.server.handler.ContextHandler;
 
 public class JettySample extends AbstractHandler {
 
@@ -31,9 +32,14 @@ public class JettySample extends AbstractHandler {
 	}
 
 	public static void main(String[] args) throws Exception {
+
 		Server server = new Server(8080);
 
-		server.setHandler(new JettySample());
+		ContextHandler context = new ContextHandler();
+		context.setContextPath("/testGetContentOk");
+		context.setHandler(new JettySample());
+
+		server.setHandler(context);
 		server.start();
 		server.join();
 	}
