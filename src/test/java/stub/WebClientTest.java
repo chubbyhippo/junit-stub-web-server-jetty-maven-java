@@ -13,7 +13,7 @@ class WebClientTest {
 	void testGetContentOk() throws MalformedURLException {
 		WebClient client = new WebClient();
 		String workingContent = client
-				.getContent(new URL("http://localhost:8080/"));
+				.getContent(new URL("http://localhost:8080/testGetContentOk"));
 		assertEquals("<h1>It works</h1>", workingContent);
 	}
 
