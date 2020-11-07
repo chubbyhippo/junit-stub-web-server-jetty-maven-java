@@ -26,6 +26,5 @@
 			<artifactId>jetty-server</artifactId>
 			<version>9.4.34.v20201102</version>
 		</dependency>
-
 	</dependencies>
 </project>
